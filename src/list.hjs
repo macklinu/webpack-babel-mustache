@@ -1,0 +1,5 @@
+<ul>
+  {{#items}}
+    <li data-id="{{id}}">{{value}}</li>
+  {{/items}}
+</ul>
