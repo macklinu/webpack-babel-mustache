@@ -74,3 +74,6 @@ typings/
 
 # Genereated build output
 dist/
+
+# Webpack stats.json
+stats.json
