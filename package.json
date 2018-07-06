@@ -5,7 +5,8 @@
   "scripts": {
     "start": "webpack-serve --config config/dev.config.js",
     "build": "wp --config config/prod.config.js",
-    "build:stats": "wp --config config/prod.config.js --reporter json > stats.json"
+    "build:stats": "rimraf stats.json && wp --config config/prod.config.js --reporter json > stats.json",
+    "analyze": "yarn build:stats && webpack-bundle-analyzer stats.json dist"
   },
   "dependencies": {
     "jquery": "^3.3.1"
@@ -19,7 +20,9 @@
     "hogan.js": "^3.0.2",
     "mustache-loader": "^1.4.1",
     "prettier": "^1.13.7",
+    "rimraf": "^2.6.2",
     "webpack": "^4.15.1",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-command": "^0.4.0",
     "webpack-serve": "^1.0.4"
   }
